@@ -1,5 +1,4 @@
-﻿
-namespace Homework_5_1
+﻿namespace Homework_5_1
 {
     partial class Main
     {
@@ -34,6 +33,8 @@ namespace Homework_5_1
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
+            this.cbGroupFilter = new System.Windows.Forms.ComboBox();
+            this.btnFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,19 +88,46 @@ namespace Homework_5_1
             this.dgvDiary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDiary.BackgroundColor = System.Drawing.Color.White;
             this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiary.Location = new System.Drawing.Point(13, 43);
+            this.dgvDiary.Location = new System.Drawing.Point(12, 40);
             this.dgvDiary.Name = "dgvDiary";
-            this.dgvDiary.Size = new System.Drawing.Size(675, 467);
+            this.dgvDiary.ReadOnly = true;
+            this.dgvDiary.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvDiary.RowHeadersVisible = false;
+            this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDiary.Size = new System.Drawing.Size(1020, 529);
             this.dgvDiary.TabIndex = 4;
+            // 
+            // cbGroupFilter
+            // 
+            this.cbGroupFilter.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbGroupFilter.FormattingEnabled = true;
+            this.cbGroupFilter.Location = new System.Drawing.Point(426, 13);
+            this.cbGroupFilter.Name = "cbGroupFilter";
+            this.cbGroupFilter.Size = new System.Drawing.Size(132, 21);
+            this.cbGroupFilter.TabIndex = 5;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnFilter.Location = new System.Drawing.Point(337, 12);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(81, 23);
+            this.btnFilter.TabIndex = 6;
+            this.btnFilter.Text = "Filtruj";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(700, 522);
+            this.ClientSize = new System.Drawing.Size(1045, 584);
+            this.Controls.Add(this.btnFilter);
+            this.Controls.Add(this.cbGroupFilter);
             this.Controls.Add(this.dgvDiary);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
@@ -119,6 +147,8 @@ namespace Homework_5_1
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvDiary;
+        private System.Windows.Forms.ComboBox cbGroupFilter;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
 

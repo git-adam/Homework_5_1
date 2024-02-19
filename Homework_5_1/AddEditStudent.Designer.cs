@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 namespace Homework_5_1
 {
     partial class AddEditStudent
@@ -49,6 +51,9 @@ namespace Homework_5_1
             this.btnConfirm = new System.Windows.Forms.Button();
             this.rtbComments = new System.Windows.Forms.RichTextBox();
             this.lbComments = new System.Windows.Forms.Label();
+            this.cbAreExtraActivities = new System.Windows.Forms.CheckBox();
+            this.cbGroup = new System.Windows.Forms.ComboBox();
+            this.lbGroupId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbId
@@ -65,14 +70,14 @@ namespace Homework_5_1
             this.tbId.Location = new System.Drawing.Point(99, 37);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
-            this.tbId.Size = new System.Drawing.Size(168, 20);
+            this.tbId.Size = new System.Drawing.Size(200, 20);
             this.tbId.TabIndex = 1;
             // 
             // tbFirstName
             // 
             this.tbFirstName.Location = new System.Drawing.Point(99, 63);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(168, 20);
+            this.tbFirstName.Size = new System.Drawing.Size(200, 20);
             this.tbFirstName.TabIndex = 3;
             // 
             // lbFirstName
@@ -88,7 +93,7 @@ namespace Homework_5_1
             // 
             this.tbLastName.Location = new System.Drawing.Point(99, 89);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(168, 20);
+            this.tbLastName.Size = new System.Drawing.Size(200, 20);
             this.tbLastName.TabIndex = 5;
             // 
             // lbLastName
@@ -102,15 +107,15 @@ namespace Homework_5_1
             // 
             // tbMath
             // 
-            this.tbMath.Location = new System.Drawing.Point(99, 115);
+            this.tbMath.Location = new System.Drawing.Point(99, 143);
             this.tbMath.Name = "tbMath";
-            this.tbMath.Size = new System.Drawing.Size(168, 20);
+            this.tbMath.Size = new System.Drawing.Size(200, 20);
             this.tbMath.TabIndex = 7;
             // 
             // lbMath
             // 
             this.lbMath.AutoSize = true;
-            this.lbMath.Location = new System.Drawing.Point(26, 118);
+            this.lbMath.Location = new System.Drawing.Point(26, 146);
             this.lbMath.Name = "lbMath";
             this.lbMath.Size = new System.Drawing.Size(68, 13);
             this.lbMath.TabIndex = 6;
@@ -118,15 +123,15 @@ namespace Homework_5_1
             // 
             // tbTechnology
             // 
-            this.tbTechnology.Location = new System.Drawing.Point(99, 141);
+            this.tbTechnology.Location = new System.Drawing.Point(99, 169);
             this.tbTechnology.Name = "tbTechnology";
-            this.tbTechnology.Size = new System.Drawing.Size(168, 20);
+            this.tbTechnology.Size = new System.Drawing.Size(200, 20);
             this.tbTechnology.TabIndex = 9;
             // 
             // lbTechnology
             // 
             this.lbTechnology.AutoSize = true;
-            this.lbTechnology.Location = new System.Drawing.Point(26, 144);
+            this.lbTechnology.Location = new System.Drawing.Point(26, 172);
             this.lbTechnology.Name = "lbTechnology";
             this.lbTechnology.Size = new System.Drawing.Size(69, 13);
             this.lbTechnology.TabIndex = 8;
@@ -134,15 +139,15 @@ namespace Homework_5_1
             // 
             // tbPhysics
             // 
-            this.tbPhysics.Location = new System.Drawing.Point(99, 167);
+            this.tbPhysics.Location = new System.Drawing.Point(99, 195);
             this.tbPhysics.Name = "tbPhysics";
-            this.tbPhysics.Size = new System.Drawing.Size(168, 20);
+            this.tbPhysics.Size = new System.Drawing.Size(200, 20);
             this.tbPhysics.TabIndex = 11;
             // 
             // lbPhysics
             // 
             this.lbPhysics.AutoSize = true;
-            this.lbPhysics.Location = new System.Drawing.Point(26, 170);
+            this.lbPhysics.Location = new System.Drawing.Point(26, 198);
             this.lbPhysics.Name = "lbPhysics";
             this.lbPhysics.Size = new System.Drawing.Size(40, 13);
             this.lbPhysics.TabIndex = 10;
@@ -150,15 +155,15 @@ namespace Homework_5_1
             // 
             // tbPolishLanguage
             // 
-            this.tbPolishLanguage.Location = new System.Drawing.Point(99, 193);
+            this.tbPolishLanguage.Location = new System.Drawing.Point(99, 221);
             this.tbPolishLanguage.Name = "tbPolishLanguage";
-            this.tbPolishLanguage.Size = new System.Drawing.Size(168, 20);
+            this.tbPolishLanguage.Size = new System.Drawing.Size(200, 20);
             this.tbPolishLanguage.TabIndex = 13;
             // 
             // lbPolishLanguague
             // 
             this.lbPolishLanguague.AutoSize = true;
-            this.lbPolishLanguague.Location = new System.Drawing.Point(26, 196);
+            this.lbPolishLanguague.Location = new System.Drawing.Point(26, 224);
             this.lbPolishLanguague.Name = "lbPolishLanguague";
             this.lbPolishLanguague.Size = new System.Drawing.Size(67, 13);
             this.lbPolishLanguague.TabIndex = 12;
@@ -166,15 +171,15 @@ namespace Homework_5_1
             // 
             // tbForeignLanguage
             // 
-            this.tbForeignLanguage.Location = new System.Drawing.Point(99, 219);
+            this.tbForeignLanguage.Location = new System.Drawing.Point(99, 247);
             this.tbForeignLanguage.Name = "tbForeignLanguage";
-            this.tbForeignLanguage.Size = new System.Drawing.Size(168, 20);
+            this.tbForeignLanguage.Size = new System.Drawing.Size(200, 20);
             this.tbForeignLanguage.TabIndex = 15;
             // 
             // lbForeignLanguage
             // 
             this.lbForeignLanguage.AutoSize = true;
-            this.lbForeignLanguage.Location = new System.Drawing.Point(26, 222);
+            this.lbForeignLanguage.Location = new System.Drawing.Point(26, 250);
             this.lbForeignLanguage.Name = "lbForeignLanguage";
             this.lbForeignLanguage.Size = new System.Drawing.Size(63, 13);
             this.lbForeignLanguage.TabIndex = 14;
@@ -182,7 +187,7 @@ namespace Homework_5_1
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(111, 349);
+            this.btnCancel.Location = new System.Drawing.Point(143, 377);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 16;
@@ -192,7 +197,7 @@ namespace Homework_5_1
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(192, 349);
+            this.btnConfirm.Location = new System.Drawing.Point(224, 377);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
             this.btnConfirm.TabIndex = 17;
@@ -202,26 +207,56 @@ namespace Homework_5_1
             // 
             // rtbComments
             // 
-            this.rtbComments.Location = new System.Drawing.Point(99, 245);
+            this.rtbComments.Location = new System.Drawing.Point(99, 273);
             this.rtbComments.Name = "rtbComments";
-            this.rtbComments.Size = new System.Drawing.Size(168, 96);
+            this.rtbComments.Size = new System.Drawing.Size(200, 96);
             this.rtbComments.TabIndex = 18;
             this.rtbComments.Text = "";
             // 
             // lbComments
             // 
             this.lbComments.AutoSize = true;
-            this.lbComments.Location = new System.Drawing.Point(26, 245);
+            this.lbComments.Location = new System.Drawing.Point(26, 273);
             this.lbComments.Name = "lbComments";
             this.lbComments.Size = new System.Drawing.Size(40, 13);
             this.lbComments.TabIndex = 19;
             this.lbComments.Text = "Uwagi:";
             // 
+            // cbAreExtraActivities
+            // 
+            this.cbAreExtraActivities.AutoSize = true;
+            this.cbAreExtraActivities.Location = new System.Drawing.Point(184, 117);
+            this.cbAreExtraActivities.Name = "cbAreExtraActivities";
+            this.cbAreExtraActivities.Size = new System.Drawing.Size(117, 17);
+            this.cbAreExtraActivities.TabIndex = 20;
+            this.cbAreExtraActivities.Text = "Zajęcia dodatkowe";
+            this.cbAreExtraActivities.UseVisualStyleBackColor = true;
+            // 
+            // cbGroup
+            // 
+            this.cbGroup.FormattingEnabled = true;
+            this.cbGroup.Location = new System.Drawing.Point(99, 115);
+            this.cbGroup.Name = "cbGroup";
+            this.cbGroup.Size = new System.Drawing.Size(79, 21);
+            this.cbGroup.TabIndex = 21;
+            // 
+            // lbGroupId
+            // 
+            this.lbGroupId.AutoSize = true;
+            this.lbGroupId.Location = new System.Drawing.Point(26, 117);
+            this.lbGroupId.Name = "lbGroupId";
+            this.lbGroupId.Size = new System.Drawing.Size(36, 13);
+            this.lbGroupId.TabIndex = 22;
+            this.lbGroupId.Text = "Klasa:";
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 413);
+            this.ClientSize = new System.Drawing.Size(344, 432);
+            this.Controls.Add(this.lbGroupId);
+            this.Controls.Add(this.cbGroup);
+            this.Controls.Add(this.cbAreExtraActivities);
             this.Controls.Add(this.lbComments);
             this.Controls.Add(this.rtbComments);
             this.Controls.Add(this.btnConfirm);
@@ -243,7 +278,8 @@ namespace Homework_5_1
             this.Controls.Add(this.tbId);
             this.Controls.Add(this.lbId);
             this.Name = "AddEditStudent";
-            this.Text = "AddEditStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dodawanie nowego ucznia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +307,8 @@ namespace Homework_5_1
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.RichTextBox rtbComments;
         private System.Windows.Forms.Label lbComments;
+        private System.Windows.Forms.CheckBox cbAreExtraActivities;
+        private System.Windows.Forms.ComboBox cbGroup;
+        private System.Windows.Forms.Label lbGroupId;
     }
 }
